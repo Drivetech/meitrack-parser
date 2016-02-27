@@ -1,0 +1,88 @@
+{
+  "name": "meitrack-parser",
+  "version": "0.0.1",
+  "description": "Parse raw data from Meitrack devices",
+  "main": "lib",
+  "scripts": {
+    "prepublish": "npm run build -s",
+    "prebuild": "npm run lint -s && npm run clean -s",
+    "build": "babel src --out-dir lib --source-maps",
+    "lint": "eslint src",
+    "clean": "rimraf lib",
+    "pretest": "npm run build -s",
+    "test": "mocha --compilers js:babel-core/register"
+  },
+  "engines": {
+    "node": ">=0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lgaticaq/meitrack-parser.git"
+  },
+  "keywords": [
+    "meitrack",
+    "avl",
+    "gps",
+    "tracking",
+    "parser"
+  ],
+  "author": "Leonardo Gatica <lgatica@protonmail.com> (https://about.me/lgatica)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lgaticaq/meitrack-parser/issues"
+  },
+  "homepage": "https://github.com/lgaticaq/meitrack-parser#readme",
+  "dependencies": {
+    "bluebird": "^3.3.1",
+    "hiredis": "^0.4.1",
+    "moment": "^2.11.2",
+    "node-geocoder": "^3.7.0",
+    "pad": "^1.0.0",
+    "redis-url": "^1.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-core": "^6.5.2",
+    "babel-preset-es2015": "^6.5.0",
+    "chai": "^3.5.0",
+    "eslint": "1.10.3",
+    "mocha": "^2.4.5",
+    "rimraf": "^2.5.2"
+  },
+  "eslintConfig": {
+    "rules": {
+      "strict": 0,
+      "indent": [
+        2,
+        2
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "semi": [
+        2,
+        "always"
+      ]
+    },
+    "ecmaFeatures": {
+      "modules": true
+    },
+    "env": {
+      "es6": true,
+      "node": true,
+      "mocha": true
+    },
+    "extends": "eslint:recommended"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "tonicExampleFilename": "example.js"
+}
