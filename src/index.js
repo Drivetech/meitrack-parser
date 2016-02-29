@@ -2,11 +2,6 @@
 
 import pad from 'pad';
 import moment from 'moment';
-import redisUrl from 'redis-url';
-import nodeGeocoder from 'node-geocoder';
-import Promise from 'bluebird';
-
-let client;
 
 const patterns = {
   mvt380: /^\$\$([\x41-\x7A])(\d{1,3}),(\d{15}),([0-9A-F]{3}),(\d{1,3}),([-]?\d+\.\d+),([-]?\d+\.\d+),(\d{12}),([AV]),(\d{1,3}),(\d{1,2}),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+),(\d{3})\|(\d{1,3})\|([0-9A-F]{4})\|([0-9A-F]{4}),([0-9A-F]{4}),([0-9A-F]{1,4})?\|([0-9A-F]{1,4})?\|([0-9A-F]{1,4})?\|([0-9A-F]{1,4})\|([0-9A-F]{1,4}),([0-9A-F]{8})?,?([0-9A-F]+)?,?(\d{1,2})?,?([0-9A-F]{4})?,?([0-9A-F]{6})?\|?([0-9A-F]{6})?\|?([0-9A-F]{6})?\|?\*([0-9A-F]{2})\r\n$/
@@ -135,66 +130,16 @@ const getMvt380 = (raw) => {
   return data;
 };
 
-const setCache = (uri) => {
-  try {
-    client = redisUrl.connect(uri);
-    Promise.promisifyAll(Object.getPrototypeOf(client));
-  } catch (err) {
-    throw err;
-  }
-};
-
-const getReverse = (lat, lon) => {
-  return new Promise((resolve, reject) => {
-    const geocoderProvider = 'google';
-    const httpAdapter = 'http';
-    const geocoder = nodeGeocoder(geocoderProvider, httpAdapter);
-    geocoder.reverse({lat: lat, lon: lon}).then(res => {
-      if (res.length === 0) resolve(null);
-      resolve(res[0].formattedAddress.split(',').map(x => x.trim()).slice(0, 2).join(', '));
-    }).catch(reject);
-  });
-};
-
-const getAddress = (lat, lng) => {
-  return new Promise((resolve, reject) => {
-    if (client) {
-      client.getAsync(`geocoder:${lat}:${lng}`).then(reply => {
-        if (reply) resolve(reply);
-        getReverse(lat, lng).then(address => {
-          if (!address) resolve(null);
-          client.set(`geocoder:${lat}:${lng}`, address);
-          resolve(address);
-        }).catch(reject);
-      }).catch(reject);
-    } else {
-      getReverse(lat, lng).then(resolve).catch(reject);
-    }
-  });
-};
-
 const parse = (raw) => {
-  return new Promise((resolve) => {
-    let result = {type: 'UNKNOWN', raw: raw.toString()};
-    if (patterns.mvt380.test(raw.toString())) {
-      result = getMvt380(raw);
-      const [lng, lat] = result.loc.coordinates;
-      getAddress(lat, lng).then(address => {
-        result.address = address;
-        resolve(result);
-      }).catch(() => {
-        resolve(result);
-      });
-    }
-    resolve(result);
-    return result;
-  });
+  let result = {type: 'UNKNOWN', raw: raw.toString()};
+  if (patterns.mvt380.test(raw.toString())) {
+    result = getMvt380(raw);
+  }
+  return result;
 };
 
 module.exports = {
   parse: parse,
   patterns: patterns,
-  getMvt380: getMvt380,
-  setCache: setCache,
-  getAddress: getAddress
+  getMvt380: getMvt380
 };
