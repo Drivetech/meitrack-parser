@@ -70,9 +70,9 @@ const getEvent = (event) => {
     '79': 'fall',
     '80': 'install',
     '81': 'dropOff',
-    '139': 'maintenance',
+    '139': 'maintenance'
   };
-  return events[alarm];
+  return events[event];
 };
 
 const getMvt380 = (raw) => {
@@ -83,10 +83,10 @@ const getMvt380 = (raw) => {
     type: 'MVT380',
     imei: parseInt(match[3], 10),
     command: match[4],
-    event: getEvent(match[4]),
+    event: getEvent(match[5]),
     loc: {
       type: 'Point',
-      coordinates: [match[7], match[6]]
+      coordinates: [parseFloat(match[7]), parseFloat(match[6])]
     },
     datetime: moment(match[8], 'DDMMYYHHmmss').toDate(),
     gpsSignal: match[9],
@@ -111,7 +111,7 @@ const getMvt380 = (raw) => {
         '5': status[12] === '1',
         '6': status[13] === '1',
         '7': status[14] === '1',
-        '8': status[15] === '1',
+        '8': status[15] === '1'
       },
       output: {
         '1': status[0] === '1',
@@ -121,7 +121,7 @@ const getMvt380 = (raw) => {
         '5': status[4] === '1',
         '6': status[5] === '1',
         '7': status[6] === '1',
-        '8': status[7] === '1',
+        '8': status[7] === '1'
       }
     },
     voltage: {
@@ -153,7 +153,7 @@ const getReverse = (lat, lon) => {
       if (res.length === 0) resolve(null);
       resolve(res[0].formattedAddress.split(',').map(x => x.trim()).slice(0, 2).join(', '));
     }).catch(reject);
-  }
+  });
 };
 
 const getAddress = (lat, lng) => {
@@ -170,20 +170,31 @@ const getAddress = (lat, lng) => {
     } else {
       getReverse(lat, lng).then(resolve).catch(reject);
     }
-  }
+  });
 };
 
 const parse = (raw) => {
-  let result = {type: 'UNKNOWN', raw: raw.toString()};
-  if (patterns.mvt380.test(raw.toString())) {
-    result = getMvt380(raw);
-  }
-  return result;
+  return new Promise((resolve) => {
+    let result = {type: 'UNKNOWN', raw: raw.toString()};
+    if (patterns.mvt380.test(raw.toString())) {
+      result = getMvt380(raw);
+      const [lng, lat] = result.loc.coordinates;
+      getAddress(lat, lng).then(address => {
+        result.address = address;
+        resolve(result);
+      }).catch(() => {
+        resolve(result);
+      });
+    }
+    resolve(result);
+    return result;
+  });
 };
 
 module.exports = {
   parse: parse,
   patterns: patterns,
   getMvt380: getMvt380,
-  setCache: setCache
+  setCache: setCache,
+  getAddress: getAddress
 };
