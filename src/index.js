@@ -83,7 +83,7 @@ const getMvt380 = (raw) => {
       type: 'Point',
       coordinates: [parseFloat(match[7]), parseFloat(match[6])]
     },
-    datetime: moment(match[8], 'DDMMYYHHmmss').toDate(),
+    datetime: moment(`${match[8]}+00:00`, 'YYMMDDHHmmssZ').toDate(),
     gpsSignal: match[9],
     satellites: parseInt(match[10], 10),
     gsmSignal: parseInt(match[11], 10),

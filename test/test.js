@@ -1,13 +1,13 @@
 'use strict';
 
-import parser from '../lib';
+import meitrack from '../lib';
 import {expect} from 'chai';
 
-describe('tz-parzer', () => {
+describe('meitrack-parzer', () => {
   describe('parse', () => {
     it('should return the raw data parsed', () => {
       const raw = new Buffer('$$A138,862170013556541,AAA,35,7.092076,79.960473,140412132808,A,10,9,57,275,1,14,5783799,7403612,413|1|F6E0|3933,0000,000B|0009||02D8|0122,*EE\r\n');
-      const data = parser.parse(raw);
+      const data = meitrack.parse(raw);
       expect(data.raw).to.eql(raw.toString());
       expect(data.type).to.eql('MVT380');
       expect(data.imei).to.eql(862170013556541);
@@ -15,6 +15,7 @@ describe('tz-parzer', () => {
       expect(data.event).to.eql('timeIntervalTracking');
       expect(data.loc.type).to.eql('Point');
       expect(data.loc.coordinates).to.eql([79.960473, 7.092076]);
+      expect(data.datetime).to.eql(new Date('2014-04-12T13:28:08.000Z'));
       expect(data.gpsSignal).to.eql('A');
       expect(data.satellites).to.eql(10);
       expect(data.gsmSignal).to.eql(9);
