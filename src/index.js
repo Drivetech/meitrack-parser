@@ -139,8 +139,13 @@ const parse = (raw) => {
   return result;
 };
 
+const isMeitrack = (raw) => {
+  return patterns.mvt380.test(raw.toString());
+};
+
 module.exports = {
   parse: parse,
   patterns: patterns,
-  getMvt380: getMvt380
+  getMvt380: getMvt380,
+  isMeitrack: isMeitrack
 };
