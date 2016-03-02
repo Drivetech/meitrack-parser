@@ -46,33 +46,33 @@
     "rimraf": "^2.5.2"
   },
   "eslintConfig": {
-    "rules": {
-      "indent": [
-        2,
-        2
-      ],
-      "quotes": [
-        2,
-        "single"
-      ],
-      "linebreak-style": [
-        2,
-        "unix"
-      ],
-      "semi": [
-        2,
-        "always"
-      ]
-    },
-    "ecmaFeatures": {
-      "modules": true
-    },
     "env": {
       "es6": true,
       "node": true,
       "mocha": true
     },
-    "extends": "eslint:recommended"
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "rules": {
+      "indent": [
+        2,
+        2
+      ],
+      "linebreak-style": [
+        2,
+        "unix"
+      ],
+      "quotes": [
+        2,
+        "single"
+      ],
+      "semi": [
+        2,
+        "always"
+      ]
+    }
   },
   "babel": {
     "presets": [
