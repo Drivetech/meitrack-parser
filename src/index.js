@@ -75,7 +75,8 @@ const getMvt380 = (raw) => {
   const status = match[27].split('').map(x => pad(4, parseInt(x, 10).toString(2), '0')).join('');
   const data = {
     raw: match[0],
-    type: 'MVT380',
+    type: 'data',
+    device: 'MVT380',
     imei: parseInt(match[3], 10),
     command: match[4],
     event: getEvent(match[5]),

@@ -9,7 +9,8 @@ describe('meitrack-parzer', () => {
       const raw = new Buffer('$$A138,862170013556541,AAA,35,7.092076,79.960473,140412132808,A,10,9,57,275,1,14,5783799,7403612,413|1|F6E0|3933,0000,000B|0009||02D8|0122,*EE\r\n');
       const data = meitrack.parse(raw);
       expect(data.raw).to.eql(raw.toString());
-      expect(data.type).to.eql('MVT380');
+      expect(data.device).to.eql('MVT380');
+      expect(data.type).to.eql('data');
       expect(data.imei).to.eql(862170013556541);
       expect(data.command).to.eql('AAA');
       expect(data.event).to.eql('timeIntervalTracking');
