@@ -207,10 +207,15 @@ const parseCommand = (data) => {
   return getCommand(data.imei, raw);
 };
 
+const getRebootCommand = (imei) => {
+  return getCommand(imei, 'F02');
+};
+
 module.exports = {
   parse: parse,
   patterns: patterns,
   getMvt380: getMvt380,
   isMeitrack: isMeitrack,
-  parseCommand: parseCommand
+  parseCommand: parseCommand,
+  getRebootCommand: getRebootCommand
 };
