@@ -73,7 +73,7 @@ const parseAlrm = (event) => {
 };
 
 const getMvt380 = (raw) => {
-  const match = patterns.mvt380.exec(raw.toString());
+  const match = patterns.mvt380.exec(raw);
   const status = match[27].split('').map(x => pad(4, parseInt(x, 10).toString(2), '0')).join('');
   const data = {
     raw: match[0],
@@ -160,7 +160,13 @@ const parse = (raw) => {
 };
 
 const isMeitrack = (raw) => {
-  return patterns.mvt380.test(raw.toString());
+  let result = false;
+  if (patterns.mvt380.test(raw)) {
+    result = true;
+  } else if (patterns.ok.test(raw)) {
+    result = true;
+  }
+  return result;
 };
 
 // Random integer from 65 to 122 (41 to 7a in hex)
