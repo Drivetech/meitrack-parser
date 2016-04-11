@@ -1,6 +1,6 @@
 {
   "name": "meitrack-parser",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Parse raw data from Meitrack devices",
   "main": "lib",
   "scripts": {
