@@ -30,7 +30,7 @@ const data = meitrack.parse(raw);
   device: 'MVT380',
   imei: 862170013556541,
   command: 'AAA',
-  event: 'timeIntervalTracking',
+  alarm: { type: 'Gps' },
   loc: { type: 'Point', coordinates: [ 79.960473, 7.092076 ] },
   datetime: Sat Apr 12 2014 11:28:08 GMT-0200 (CLST),
   gpsSignal: 'A',
