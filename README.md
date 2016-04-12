@@ -2,8 +2,9 @@
 
 [![npm version](https://img.shields.io/npm/v/meitrack-parser.svg?style=flat-square)](https://www.npmjs.com/package/meitrack-parser)
 [![npm downloads](https://img.shields.io/npm/dm/meitrack-parser.svg?style=flat-square)](https://www.npmjs.com/package/meitrack-parser)
-[![dependency Status](https://img.shields.io/david/lgaticaq/meitrack-parser.svg?style=flat-square)](https://david-dm.org/lgaticaq/meitrack-parser#info=dependencies)
 [![Build Status](https://img.shields.io/travis/lgaticaq/meitrack-parser.svg?style=flat-square)](https://travis-ci.org/lgaticaq/meitrack-parser)
+[![Coverage Status](https://img.shields.io/coveralls/lgaticaq/meitrack-parser/master.svg?style=flat-square)](https://coveralls.io/github/lgaticaq/meitrack-parser?branch=master)
+[![dependency Status](https://img.shields.io/david/lgaticaq/meitrack-parser.svg?style=flat-square)](https://david-dm.org/lgaticaq/meitrack-parser#info=dependencies)
 [![devDependency Status](https://img.shields.io/david/dev/lgaticaq/meitrack-parser.svg?style=flat-square)](https://david-dm.org/lgaticaq/meitrack-parser#info=devDependencies)
 [![Join the chat at https://gitter.im/lgaticaq/meitrack-parser](https://img.shields.io/badge/gitter-join%20chat%20%E2%86%92-brightgreen.svg?style=flat-square)](https://gitter.im/lgaticaq/meitrack-parser?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
