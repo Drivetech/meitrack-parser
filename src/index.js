@@ -101,25 +101,25 @@ const getMvt380 = (raw) => {
     lac: parseInt(match[25], 16),
     ci: parseInt(match[26], 16),
     status: {
-      input: {
-        '1': status[8] === '1',
-        '2': status[9] === '1',
-        '3': status[10] === '1',
-        '4': status[11] === '1',
-        '5': status[12] === '1',
-        '6': status[13] === '1',
-        '7': status[14] === '1',
-        '8': status[15] === '1'
-      },
       output: {
-        '1': status[0] === '1',
-        '2': status[1] === '1',
-        '3': status[2] === '1',
-        '4': status[3] === '1',
-        '5': status[4] === '1',
-        '6': status[5] === '1',
-        '7': status[6] === '1',
-        '8': status[7] === '1'
+        '1': status[15] === '1',
+        '2': status[14] === '1',
+        '3': status[13] === '1',
+        '4': status[12] === '1',
+        '5': status[11] === '1',
+        '6': status[10] === '1',
+        '7': status[9] === '1',
+        '8': status[8] === '1'
+      },
+      input: {
+        '1': status[7] === '1',
+        '2': status[6] === '1',
+        '3': status[5] === '1',
+        '4': status[4] === '1',
+        '5': status[3] === '1',
+        '6': status[2] === '1',
+        '7': status[1] === '1',
+        '8': status[0] === '1'
       }
     },
     voltage: {
