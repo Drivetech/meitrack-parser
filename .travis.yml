@@ -6,4 +6,4 @@ node_js:
 notifications:
   email: false
 after_success:
-  - coveralls
+  - npm run coveralls
