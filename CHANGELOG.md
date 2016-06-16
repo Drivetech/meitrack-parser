@@ -1,3 +1,22 @@
+#### 0.3.3 (2016-6-16)
+
+##### Chores
+
+* **package:**
+  * Add code climate and generate-changelog ([368444a7](https://github.com/lgaticaq/meitrack-parser/commit/368444a7971b30091cfb774e21d89f4f406dd8ae))
+  * Update dependencies ([01182294](https://github.com/lgaticaq/meitrack-parser/commit/01182294d916e64172815bce98c3d81892f87bb2))
+  * update eslint to version 2.10.1 ([f58f272e](https://github.com/lgaticaq/meitrack-parser/commit/f58f272e31fc07a83dd2b04512380ac2cd24b084))
+  * update eslint to version 2.9.0 ([f4404ea6](https://github.com/lgaticaq/meitrack-parser/commit/f4404ea6ab94b582c52ae1ad7cf4d5dfb30aeef9))
+  * update babel-cli to version 6.7.7 ([181020fc](https://github.com/lgaticaq/meitrack-parser/commit/181020fc1a54a32c31667c62a592f2f4841ddd77))
+  * update babel-core to version 6.7.7 ([84cca990](https://github.com/lgaticaq/meitrack-parser/commit/84cca990591b9f16b3d99dfc6e55da9decbc4f61))
+  * update dependencies ([6c7870fc](https://github.com/lgaticaq/meitrack-parser/commit/6c7870fc0860b505fcf389f0191f0424327c1228))
+* **node:** Upgrade node version ([2bab4b3d](https://github.com/lgaticaq/meitrack-parser/commit/2bab4b3d851acfe70b10647cfc6c30ce4f774cf7))
+* **src:** Remove babel ([0fbab71a](https://github.com/lgaticaq/meitrack-parser/commit/0fbab71a8a7396e33103f21dc602ea9b3ba90d07))
+
+##### Documentation Changes
+
+* **changelog:** Add changelog ([852901d1](https://github.com/lgaticaq/meitrack-parser/commit/852901d1f1228ceaebf67620192afef311310f4c))
+
 #### 0.3.2 (2016-04-12)
 
 * Fix parse status ([9c91f9b](https://github.com/lgaticaq/meitrack-parser/commit/9c91f9b))
