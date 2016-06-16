@@ -1,15 +1,15 @@
 'use strict';
 
-import crc from 'crc';
-import pad from 'pad';
-import moment from 'moment';
+const crc = require('crc');
+const pad = require('pad');
+const moment = require('moment');
 
 const patterns = {
   mvt380: /^\$\$([\x41-\x7A])(\d{1,3}),(\d{15}),([0-9A-F]{3}),(\d{1,3}),([-]?\d+\.\d+),([-]?\d+\.\d+),(\d{12}),([AV]),(\d{1,3}),(\d{1,2}),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+),(\d{3})\|(\d{1,3})\|([0-9A-F]{4})\|([0-9A-F]{4}),([0-9A-F]{4}),([0-9A-F]{1,4})?\|([0-9A-F]{1,4})?\|([0-9A-F]{1,4})?\|([0-9A-F]{1,4})\|([0-9A-F]{1,4}),([0-9A-F]{8})?,?([0-9A-F]+)?,?(\d{1,2})?,?([0-9A-F]{4})?,?([0-9A-F]{6})?\|?([0-9A-F]{6})?\|?([0-9A-F]{6})?\|?\*([0-9A-F]{2})\r\n$/,
   ok: /^\$\$([\x41-\x7A])(\d{1,3}),(\d{15}),([0-9A-F]{3}),OK\*([0-9A-F]{2})\r\n$/
 };
 
-const parseAlrm = (event) => {
+const parseAlrm = event => {
   const alarms = {
     '1': {type: 'SOS_Button'},
     '2': {type: 'DI', number: 2, status: true},
@@ -72,7 +72,7 @@ const parseAlrm = (event) => {
   return event in alarms ? alarms[event] : null;
 };
 
-const getMvt380 = (raw) => {
+const getMvt380 = raw => {
   const match = patterns.mvt380.exec(raw);
   const status = match[27].split('').map(x => pad(4, parseInt(x, 10).toString(2), '0')).join('');
   const data = {
@@ -133,7 +133,7 @@ const getMvt380 = (raw) => {
   return data;
 };
 
-const parseCode = (raw) => {
+const parseCode = raw => {
   const match = patterns.ok.exec(raw);
   const code = match[4];
   const codes = {
@@ -149,7 +149,7 @@ const parseCode = (raw) => {
   return data;
 };
 
-const parse = (raw) => {
+const parse = raw => {
   let result = {type: 'UNKNOWN', raw: raw.toString()};
   if (patterns.mvt380.test(raw)) {
     result = getMvt380(raw);
@@ -159,7 +159,7 @@ const parse = (raw) => {
   return result;
 };
 
-const isMeitrack = (raw) => {
+const isMeitrack = raw => {
   let result = false;
   if (patterns.mvt380.test(raw)) {
     result = true;
@@ -181,10 +181,12 @@ const getCommand = (imei, command) => {
   return `${raw2}${pad(2, crc.crc1(raw2).toString(16).toUpperCase(), '0')}\r\n`;
 };
 
-const parseCommand = (data) => {
+const parseCommand = data => {
   let raw, state, port, speed, interval;
   if (/^[1-5]{1}_(on|off|status)$/.test(data.instruction)) {
-    [port, state] = data.instruction.split('_');
+    let _data = data.instruction.split('_');
+    port = _data[0];
+    state = _data[1];
     let initial = [0, 0, 0, 0, 0];
     const states = {off: 0, on: 1, status: 2};
     initial[port - 1] = states[state];
@@ -213,7 +215,7 @@ const parseCommand = (data) => {
   return getCommand(data.imei, raw);
 };
 
-const getRebootCommand = (imei) => {
+const getRebootCommand = imei => {
   return getCommand(imei, 'F02');
 };
 

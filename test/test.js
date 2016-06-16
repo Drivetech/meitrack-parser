@@ -1,7 +1,7 @@
 'use strict';
 
-import meitrack from '../lib';
-import {expect} from 'chai';
+const meitrack = require('../src');
+const expect = require('chai').expect;
 
 describe('meitrack-parser', () => {
   it('should return the raw data parsed', () => {
