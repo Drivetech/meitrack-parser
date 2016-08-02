@@ -26,18 +26,18 @@
 
 * Add pattern ok to isMeitrack ([7e156eb](https://github.com/lgaticaq/meitrack-parser/commit/7e156eb))
 
-#### 0.3.0 (2016-04-11)
+### 0.3.0 (2016-04-11)
 
 * Change event to alarm ([a27ab0d](https://github.com/lgaticaq/meitrack-parser/commit/a27ab0d))
 * Fix year ([b1b04fb](https://github.com/lgaticaq/meitrack-parser/commit/b1b04fb))
 * Update dependencies ([9e33579](https://github.com/lgaticaq/meitrack-parser/commit/9e33579))
 
-#### 0.2.0 (2016-04-01)
+### 0.2.0 (2016-04-01)
 
 * Add getRebootCommand ([fb651fe](https://github.com/lgaticaq/meitrack-parser/commit/fb651fe))
 * Update eslint ([2673b5d](https://github.com/lgaticaq/meitrack-parser/commit/2673b5d))
 
-#### 0.1.0 (2016-03-29)
+### 0.1.0 (2016-03-29)
 
 * Add parse command and ok ([914b22c](https://github.com/lgaticaq/meitrack-parser/commit/914b22c))
 * Update dependencies ([30d4461](https://github.com/lgaticaq/meitrack-parser/commit/30d4461))
