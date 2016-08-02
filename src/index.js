@@ -187,7 +187,7 @@ const parseCommand = data => {
     let _data = data.instruction.split('_');
     port = _data[0];
     state = _data[1];
-    let initial = [0, 0, 0, 0, 0];
+    let initial = [2, 2, 2, 2, 2];
     const states = {off: 0, on: 1, status: 2};
     initial[port - 1] = states[state];
     speed = data.speed || 0;

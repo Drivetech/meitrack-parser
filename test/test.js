@@ -73,7 +73,7 @@ describe('meitrack-parser', () => {
       imei: 353358017784062
     };
     const data = meitrack.parseCommand(command);
-    expect(data).to.match(/^@@([\x41-\x7A])(\d{1,3}),353358017784062,C01,0,10000\*([0-9A-F]{2})\r\n$/);
+    expect(data).to.match(/^@@([\x41-\x7A])(\d{1,3}),353358017784062,C01,0,12222\*([0-9A-F]{2})\r\n$/);
   });
 
   it('should return command reboot', () => {
