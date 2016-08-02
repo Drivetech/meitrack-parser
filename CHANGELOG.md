@@ -1,3 +1,16 @@
+#### 0.3.4 (2016-8-2)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([319160e3](https://github.com/lgaticaq/meitrack-parser/commit/319160e341c77748e5d72568e9450fc6389d14c6))
+  * update mocha to version 3.0.0 ([51ef17ed](https://github.com/lgaticaq/meitrack-parser/commit/51ef17ed1c21bc5cd66aec3f0168416e7f783795))
+  * update eslint to version 3.2.2 ([942c348c](https://github.com/lgaticaq/meitrack-parser/commit/942c348c4aa1b8bb782724078ef7bb07837a260b))
+
+##### Bug Fixes
+
+* **parseCommand:** Set initial states output to 2. ([cbae8f17](https://github.com/lgaticaq/meitrack-parser/commit/cbae8f17ad4d97e4ee355567e27817dae534c7ff))
+
 #### 0.3.3 (2016-6-16)
 
 ##### Chores
