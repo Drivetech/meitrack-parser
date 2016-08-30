@@ -219,11 +219,21 @@ const getRebootCommand = imei => {
   return getCommand(imei, 'F02');
 };
 
+const getImei = raw => {
+  let imei = null;
+  const data = raw.toString();
+  if (patterns.mvt380.test(data)) {
+    imei = patterns.mvt380.exec(data)[3];
+  }
+  return imei;
+};
+
 module.exports = {
   parse: parse,
   patterns: patterns,
   getMvt380: getMvt380,
   isMeitrack: isMeitrack,
   parseCommand: parseCommand,
-  getRebootCommand: getRebootCommand
+  getRebootCommand: getRebootCommand,
+  getImei: getImei
 };

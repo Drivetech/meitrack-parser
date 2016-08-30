@@ -80,4 +80,16 @@ describe('meitrack-parser', () => {
     const data = meitrack.getRebootCommand(353358017784062);
     expect(data).to.match(/^@@([\x41-\x7A])(\d{1,3}),353358017784062,F02\*([0-9A-F]{2})\r\n$/);
   });
+
+  it('should return null imei', () => {
+    const raw = new Buffer('askdhaskjdhakjdhaksjdhaksjdh');
+    const imei = meitrack.getImei(raw);
+    expect(imei).to.be.null;
+  });
+
+  it('should return MVT380 imei', () => {
+    const raw = new Buffer('$$e155,867965021508656,AAA,35,-33.361133,-70.514245,160412155005,A,8,27,0,289,1.3,867,318379,2338885,730|1|32D3|A03F,0008,0000|0000|0000|02DA|0106,00000001,*3A\r\n');
+    const imei = meitrack.getImei(raw);
+    expect(imei).to.eql('867965021508656');
+  });
 });
