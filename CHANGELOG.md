@@ -1,3 +1,15 @@
+### 0.4.0 (2016-8-30)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([1e978976](https://github.com/lgaticaq/meitrack-parser/commit/1e9789767e181fd0db9ace957a6fe45af7306090))
+  * Update dependencies ([4850f64d](https://github.com/lgaticaq/meitrack-parser/commit/4850f64d610844b297bc3fb4a165f7a7b0a70f17))
+
+##### New Features
+
+* **parser:** Add getImei ([0675e756](https://github.com/lgaticaq/meitrack-parser/commit/0675e75667ee86e02da635a08f8b14da4d68e94f))
+
 #### 0.3.4 (2016-8-2)
 
 ##### Chores
