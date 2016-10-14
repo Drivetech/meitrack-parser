@@ -1,3 +1,15 @@
+#### 0.4.1 (2016-10-14)
+
+##### Chores
+
+* **package:**
+  * Update dependencies ([08cc569e](https://github.com/lgaticaq/meitrack-parser/commit/08cc569e5eb2708ab00c2bb502f1e9ff21ab7bd0))
+  * Add support to yarnpkg ([88e2692a](https://github.com/lgaticaq/meitrack-parser/commit/88e2692a62460b49aac9bd2e578f7324e02b1a79))
+
+##### New Features
+
+* **parser:** Add manufacturer to data ([3343a9af](https://github.com/lgaticaq/meitrack-parser/commit/3343a9af3b9d5ccfc28e7499b3325420e95d52ba))
+
 ### 0.4.0 (2016-8-30)
 
 ##### Chores
