@@ -78,6 +78,7 @@ const getMvt380 = raw => {
   const data = {
     raw: match[0],
     type: 'data',
+    manufacturer: 'meitrack',
     device: 'MVT380',
     imei: parseInt(match[3], 10),
     command: match[4],
@@ -144,7 +145,12 @@ const parseCode = raw => {
     F01: 'RBOOT',
     F02: 'RBOOT'
   };
-  const data = {device: 'MEITRACK-COMMAND-OK', type: 'ok', code: code};
+  const data = {
+    manufacturer: 'meitrack',
+    device: 'MEITRACK-COMMAND-OK',
+    type: 'ok',
+    code: code
+  };
   if (Object.keys(codes).indexOf(code) > -1) data.command = codes[code];
   return data;
 };

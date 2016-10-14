@@ -8,6 +8,7 @@ describe('meitrack-parser', () => {
     const raw = new Buffer('$$e155,867965021508656,AAA,35,-33.361133,-70.514245,160412155005,A,8,27,0,289,1.3,867,318379,2338885,730|1|32D3|A03F,0008,0000|0000|0000|02DA|0106,00000001,*3A\r\n');
     const data = meitrack.parse(raw);
     expect(data.raw).to.eql(raw.toString());
+    expect(data.manufacturer).to.eql('meitrack');
     expect(data.device).to.eql('MVT380');
     expect(data.type).to.eql('data');
     expect(data.imei).to.eql(867965021508656);
@@ -62,6 +63,7 @@ describe('meitrack-parser', () => {
   it('should return ok data', () => {
     const raw = new Buffer('$$j28,353358017784062,F01,OK*19\r\n');
     const data = meitrack.parse(raw);
+    expect(data.manufacturer).to.eql('meitrack');
     expect(data.device).to.eql('MEITRACK-COMMAND-OK');
     expect(data.type).to.eql('ok');
     expect(data.code).to.eql('F01');
