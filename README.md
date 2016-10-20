@@ -47,7 +47,7 @@ const data = meitrack.parse(raw);
   mcc: '413',
   mnc: '1',
   lac: 63200,
-  ci: 14643,
+  cid: 14643,
   status: { 
     input: {
       '1': false,

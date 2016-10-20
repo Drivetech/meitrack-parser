@@ -100,7 +100,7 @@ const getMvt380 = raw => {
     mcc: match[23],
     mnc: match[24],
     lac: parseInt(match[25], 16),
-    ci: parseInt(match[26], 16),
+    cid: parseInt(match[26], 16),
     status: {
       output: {
         '1': status[15] === '1',

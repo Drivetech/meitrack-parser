@@ -29,7 +29,7 @@ describe('meitrack-parser', () => {
     expect(data.mcc).to.eql('730');
     expect(data.mnc).to.eql('1');
     expect(data.lac).to.eql(13011);
-    expect(data.ci).to.eql(41023);
+    expect(data.cid).to.eql(41023);
     expect(data.status.input['1']).to.be.false;
     expect(data.status.input['2']).to.be.false;
     expect(data.status.input['3']).to.be.false;
