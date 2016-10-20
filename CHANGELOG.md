@@ -1,3 +1,19 @@
+## 1.0.0 (2016-10-20)
+
+##### Chores
+
+* **package:**
+  * Update eslint to 3.8.1 ([34a28071](https://github.com/lgaticaq/meitrack-parser/commit/34a280719b60a5f13b3b691746d721c51a88dddc))
+  * update codeclimate-test-reporter to version 0.4.0 ([c717f081](https://github.com/lgaticaq/meitrack-parser/commit/c717f0811545e90821b056ef2e1f1fff87d656eb))
+  * update eslint to version 3.7.0 ([8d7f80bf](https://github.com/lgaticaq/meitrack-parser/commit/8d7f80bf58d050a48dfaca1ac567e3f5c3693173))
+  * update eslint to version 3.6.1 ([f41ffc21](https://github.com/lgaticaq/meitrack-parser/commit/f41ffc216c18bfc631992ff72642a1a7cd66e9e4))
+
+##### Bug Fixes
+
+* **parser:**
+  * Remove ci and add cid ([c76303f4](https://github.com/lgaticaq/meitrack-parser/commit/c76303f40c0e3a34ae6cdbce0018e7bcd173a95a))
+  * Remove gpsSignal and add gpsStatus ([e419dd68](https://github.com/lgaticaq/meitrack-parser/commit/e419dd681c21b671f9cad1ac2cd694065cdff826))
+
 #### 0.4.1 (2016-10-14)
 
 ##### Chores
