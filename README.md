@@ -35,7 +35,7 @@ const data = meitrack.parse(raw);
   alarm: { type: 'Gps' },
   loc: { type: 'Point', coordinates: [ 79.960473, 7.092076 ] },
   datetime: Sat Apr 12 2014 11:28:08 GMT-0200 (CLST),
-  gpsSignal: 'A',
+  gpsStatus: true,
   satellites: 10,
   gsmSignal: 9,
   speed: 57,

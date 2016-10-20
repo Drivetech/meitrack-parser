@@ -17,7 +17,7 @@ describe('meitrack-parser', () => {
     expect(data.loc.type).to.eql('Point');
     expect(data.loc.coordinates).to.eql([-70.514245, -33.361133]);
     expect(data.datetime).to.eql(new Date('2016-04-12T15:50:05.000Z'));
-    expect(data.gpsSignal).to.eql('A');
+    expect(data.gpsStatus).to.be.true;
     expect(data.satellites).to.eql(8);
     expect(data.gsmSignal).to.eql(27);
     expect(data.speed).to.eql(0);

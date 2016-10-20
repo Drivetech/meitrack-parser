@@ -88,7 +88,7 @@ const getMvt380 = raw => {
       coordinates: [parseFloat(match[7]), parseFloat(match[6])]
     },
     datetime: moment(`${match[8]}+00:00`, 'YYMMDDHHmmssZ').toDate(),
-    gpsSignal: match[9],
+    gpsStatus: match[9] === 'A',
     satellites: parseInt(match[10], 10),
     gsmSignal: parseInt(match[11], 10),
     speed: parseFloat(match[12]),
