@@ -13,7 +13,7 @@
     "release:patch": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags && npm publish"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6"
   },
   "repository": {
     "type": "git",
@@ -33,9 +33,9 @@
   },
   "homepage": "https://github.com/lgaticaq/meitrack-parser#readme",
   "dependencies": {
-    "crc": "^3.4.1",
-    "moment": "^2.15.1",
-    "pad": "^2.0.0"
+    "crc": "3.4.1",
+    "moment": "2.15.1",
+    "pad": "2.0.0"
   },
   "devDependencies": {
     "chai": "4.1.2",
