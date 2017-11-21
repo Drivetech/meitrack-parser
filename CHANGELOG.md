@@ -1,3 +1,51 @@
+## 2.0.0 (2017-11-21)
+
+##### Chores
+
+* **package:**
+  * update dependencies ([db43c049](https://github.com/lgaticaq/meitrack-parser/commit/db43c0498629a30f0d5a2d276bec6db7d8c50993))
+  * update dependencies ([2d1bea04](https://github.com/lgaticaq/meitrack-parser/commit/2d1bea04a3457c124e3a3c1c9cec061d00bafdd4))
+  * remove coveralls and codeclimate ([60ce2b1f](https://github.com/lgaticaq/meitrack-parser/commit/60ce2b1f1782c633a0a3fb6182e0c12f95fe7eba))
+  * remove moment ([1e4c3c05](https://github.com/lgaticaq/meitrack-parser/commit/1e4c3c05602d2f6663e700e822401ee393533fcc))
+  * update eslint to version 4.0.0 ([95e6387a](https://github.com/lgaticaq/meitrack-parser/commit/95e6387aa74e655a9db056b8e2170e070dcaf634))
+  * update chai to version 4.0.0 ([244c7d83](https://github.com/lgaticaq/meitrack-parser/commit/244c7d83bcedbd325252542b7edb680698675bb1))
+  * update eslint to version 3.9.1 ([8c580dd5](https://github.com/lgaticaq/meitrack-parser/commit/8c580dd5125fe7e0517e7e5b5fb165ba8257e9bb))
+  * update crc to version 3.4.1 ([921a3062](https://github.com/lgaticaq/meitrack-parser/commit/921a30623569971748e5fdcee1bb67b5647b27bd))
+  * update eslint to version 3.8.0 ([23666a1f](https://github.com/lgaticaq/meitrack-parser/commit/23666a1f1ceafa9ba36156ed72f97c73292537bf))
+* **deps:**
+  * update dependency eslint to v4.11.0 ([9f344779](https://github.com/lgaticaq/meitrack-parser/commit/9f3447799efcc580eb842feaa497d7fa97c246d6))
+  * update dependency eslint to v4.9.0 ([71343a51](https://github.com/lgaticaq/meitrack-parser/commit/71343a510502663b2f3b25133e93e7e19d5c0aa2))
+  * update dependency mocha to v4.0.1 ([f25957ba](https://github.com/lgaticaq/meitrack-parser/commit/f25957ba952f55e30ee07045181a7ce0921cec62))
+  * update dependency mocha to v4.0.0 ([36b38849](https://github.com/lgaticaq/meitrack-parser/commit/36b388496b9883e88d753b12760b19466d0671e3))
+  * update dependency eslint to v4.8.0 ([4148820b](https://github.com/lgaticaq/meitrack-parser/commit/4148820b94a2f0f072c4cc76e7176ef7ab9b584d))
+  * update dependency coveralls to v3.0.0 ([52f7fe74](https://github.com/lgaticaq/meitrack-parser/commit/52f7fe7423dca940feb4e30a68900e8ce81ffdfe))
+  * update dependency coveralls to v2.13.3 ([2db61c17](https://github.com/lgaticaq/meitrack-parser/commit/2db61c17f4a0f62acc5a4dee245dbdc256fa10bb))
+  * update dependency coveralls to v2.13.2 ([5773ea1a](https://github.com/lgaticaq/meitrack-parser/commit/5773ea1aa830f6ca4120733855af823c2386bf7d))
+  * update dependency generate-changelog to v1.5.0 ([0cb2f1d4](https://github.com/lgaticaq/meitrack-parser/commit/0cb2f1d4bd15c56b247f99fa02043e839cdc406f))
+  * update dependency eslint to v4.7.2 ([40578660](https://github.com/lgaticaq/meitrack-parser/commit/4057866006c6ab15d2607ae9afc2a254d4bc686b))
+  * update dependency eslint to v4.7.1 ([9d1132da](https://github.com/lgaticaq/meitrack-parser/commit/9d1132dad2d2b04c792ab453f2aeeb6de622c48f))
+  * update dependency eslint to v4.7.0 ([04b6734f](https://github.com/lgaticaq/meitrack-parser/commit/04b6734f2a19223fe25760e4c38dc0858660d395))
+  * update dependency mocha to v3.5.3 ([bbf967a0](https://github.com/lgaticaq/meitrack-parser/commit/bbf967a021a09c504fc7eb8063275c0619a00aea))
+  * update dependency mocha to v3.5.2 ([29ad74e7](https://github.com/lgaticaq/meitrack-parser/commit/29ad74e74a5fb329877fc32cc04df73188a6aad5))
+  * update dependency mocha to v3.5.1 ([f2745412](https://github.com/lgaticaq/meitrack-parser/commit/f27454128b4306d89fb40c562bc8ff2af1a34488))
+  * update dependency codeclimate-test-reporter to v0.5.0 ([fdfb2ed4](https://github.com/lgaticaq/meitrack-parser/commit/fdfb2ed48acbfb3050dcfb89fed13183497e2210))
+
+##### New Features
+
+* **node:** update min node version to v6 ([051f2028](https://github.com/lgaticaq/meitrack-parser/commit/051f202845d121ac3a04d35886df092f3b958655))
+
+##### Bug Fixes
+
+* **deps:** update dependency pad to v^2.0.0 ([a32b1bbc](https://github.com/lgaticaq/meitrack-parser/commit/a32b1bbc58d9c17a641802e0b2cb419e36c76957))
+
+##### Refactors
+
+* **deps:** renovate pin dependencies packages ([7042282e](https://github.com/lgaticaq/meitrack-parser/commit/7042282ea5ea05473942e5861663a4ba9bf84c2d))
+
+##### Code Style Changes
+
+* **standard:** migrate to standard ([663cd198](https://github.com/lgaticaq/meitrack-parser/commit/663cd198a250e7a413929a0c96df2c5ec89b012a))
+
 ## 1.0.0 (2016-10-20)
 
 ##### Chores
