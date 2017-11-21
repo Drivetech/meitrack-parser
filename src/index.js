@@ -2,7 +2,6 @@
 
 const crc = require('crc');
 const pad = require('pad');
-const moment = require('moment');
 
 const patterns = {
   mvt380: /^\$\$([\x41-\x7A])(\d{1,3}),(\d{15}),([0-9A-F]{3}),(\d{1,3}),([-]?\d+\.\d+),([-]?\d+\.\d+),(\d{12}),([AV]),(\d{1,3}),(\d{1,2}),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+(\.\d+)?),(\d+),(\d{3})\|(\d{1,3})\|([0-9A-F]{4})\|([0-9A-F]{4}),([0-9A-F]{4}),([0-9A-F]{1,4})?\|([0-9A-F]{1,4})?\|([0-9A-F]{1,4})?\|([0-9A-F]{1,4})\|([0-9A-F]{1,4}),([0-9A-F]{8})?,?([0-9A-F]+)?,?(\d{1,2})?,?([0-9A-F]{4})?,?([0-9A-F]{6})?\|?([0-9A-F]{6})?\|?([0-9A-F]{6})?\|?\*([0-9A-F]{2})\r\n$/,
@@ -87,7 +86,7 @@ const getMvt380 = raw => {
       type: 'Point',
       coordinates: [parseFloat(match[7]), parseFloat(match[6])]
     },
-    datetime: moment(`${match[8]}+00:00`, 'YYMMDDHHmmssZ').toDate(),
+    datetime: new Date(match[8].replace(/(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})(\d{2})/, '20$1-$2-$3T$4:$5:$6.000Z')),
     gpsStatus: match[9] === 'A',
     satellites: parseInt(match[10], 10),
     gsmSignal: parseInt(match[11], 10),
