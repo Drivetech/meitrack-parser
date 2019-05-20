@@ -35,7 +35,7 @@
   "homepage": "https://github.com/lgaticaq/meitrack-parser#readme",
   "dependencies": {
     "crc": "3.8.0",
-    "pad": "2.3.0"
+    "pad": "3.2.0"
   },
   "devDependencies": {
     "chai": "4.1.2",
